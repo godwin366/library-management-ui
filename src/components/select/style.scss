@@ -1,0 +1,25 @@
+.common-select-container {
+    width: 100% !important;
+    .common-drop-down {
+        width: 100% !important;
+        fieldset {
+           border-color: rgba(0, 0, 0, 0.23) !important;
+        }
+       &:hover {
+          fieldset {
+             border-color: rgba(0, 0, 0, 0.23) !important;
+          }
+       }
+    }
+    
+    .Mui-error {
+        fieldset {
+            border-color: #d32f2f !important;
+        }
+       &:hover {
+           fieldset {
+               border-color: #d32f2f !important;
+           }
+       }
+   }
+ }

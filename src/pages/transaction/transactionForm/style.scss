@@ -1,0 +1,54 @@
+.transaction-edit-main {
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    flex-direction: row;
+    background-color: #050c9c;
+    height: 75px;
+    padding: 18px 27px;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    h6 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      button {
+        background-color: inherit;
+        border: none;
+        
+        .check-icon {
+          background: #8186ff;
+          border-radius: 50%;
+          width: 39px;
+          height: 39px;
+          color: #ffff;
+          padding: 8px;
+          cursor: pointer;
+        }
+      }
+      .close-icon {
+        cursor: pointer;
+        background: #ffff;
+        border-radius: 50%;
+        width: 39px;
+        height: 39px;
+        color: #050c9c;
+        padding: 5px;
+      }
+    }
+  }
+  .edit-body {
+    padding: 20px;
+    .transaction-edit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

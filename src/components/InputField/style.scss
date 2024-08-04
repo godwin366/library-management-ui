@@ -1,0 +1,46 @@
+.common-input-container {
+  .common-input-pre-label {
+    margin: 0;
+    padding: 0 0 5px 5px;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .common-input-field {
+    width: 100%;
+    
+    .Mui-disabled {
+      &::before {
+        border-bottom-style: solid !important;
+      }
+    }
+
+    .MuiInputBase-root {
+      fieldset {
+        border-color: rgba(0, 0, 0, 0.23) !important;
+      }
+      &:hover {
+        fieldset {
+          border-color: rgba(0, 0, 0, 0.23) !important;
+        }
+      }
+      input {
+        height: 10px !important;
+      }
+    }
+    .Mui-error {
+      fieldset {
+        border-color: #d32f2f !important;
+      }
+      &:hover {
+        fieldset {
+          border-color: #d32f2f !important;
+        }
+      }
+    }
+
+    .error-msg {
+      color: red;
+    }
+  }
+}

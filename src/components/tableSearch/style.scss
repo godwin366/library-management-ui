@@ -1,0 +1,14 @@
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  .search-input {
+    width: clamp(300px, 100%, 400px);
+  }
+  .add-button {
+    margin-right: 20px;
+    cursor: pointer;
+    width: 100px;
+  }
+}

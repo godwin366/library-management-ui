@@ -1,0 +1,52 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .left-pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    .per-page-select {
+      max-height: 30px;
+      min-width: 60px;  
+      width: 100%;
+      font-size: 12px;
+
+      .MuiSelect-select {
+        padding-right: 10px !important;
+      }
+      &:hover,
+      &.Mui-focused {
+        fieldset {
+          border-width: 1px;
+          border-color: rgba(0, 0, 0, 0.23);
+        }
+      }
+    }
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  .right-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .page-number {
+      padding: 5px 15px;
+      border: 1px solid black;
+      border-color: #0000001f;
+      border-radius: 5px;
+    }
+
+    .arrow-buttons {
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}

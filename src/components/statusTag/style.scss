@@ -1,0 +1,19 @@
+.status-tag {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    min-width: 100px;
+  
+    &.available {
+      background-color: #d4edda;
+      color: #155724;
+    }
+  
+    &.not-available {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  }
+  

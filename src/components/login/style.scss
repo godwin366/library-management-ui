@@ -1,0 +1,17 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .auth-button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.5s;
+  
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+}

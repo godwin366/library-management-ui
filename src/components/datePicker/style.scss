@@ -1,0 +1,62 @@
+.common_date_picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .MuiFormControl-root {
+    max-height: 42px;
+    height: 42px;
+    border-radius: 7px;
+
+    .MuiInputBase-root {
+      height: inherit;
+      padding: 12px 16px 12px 8px;
+
+      .MuiOutlinedInput-notchedOutline {
+        outline: unset !important;
+        border: unset !important;
+      }
+
+      .MuiSvgIcon-root {
+        height: 18px;
+        width: 18px;
+      }
+
+      .MuiInputAdornment-root {
+        margin-right: unset;
+      }
+
+      .MuiButtonBase-root.MuiIconButton-root {
+        margin: unset;
+        padding: 8px 8px 8px 8px;
+      }
+
+      .MuiInputBase-input {
+        padding: unset;
+        color: white;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.28px;
+
+        &::placeholder {
+          opacity: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 14px;
+          letter-spacing: -0.28px;
+        }
+      }
+    }
+  }
+
+  .date_picker_error {
+    .MuiInputBase-root {
+      border: 1px solid red;
+    }
+  }
+}
+
