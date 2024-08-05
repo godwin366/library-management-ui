@@ -3,11 +3,9 @@ import "./style.scss";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import { useForm, FormProvider, Controller } from "react-hook-form";
-import InputField from "../../../components/InputField";
-import { emailRegex } from "../../../utils/constant";
 import Dropdown from "../../../components/select";
 import DatePicker from "../../../components/datePicker";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 
 interface IProps {
   transaction: any;
@@ -24,7 +22,11 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
         }
       : {},
   });
-  const onSubmit = (data: any) => console.log("submit", data);
+  const onSubmit = (data: any) =>
+    console.log("submit", {
+      ...data,
+      dueDate: dayjs(data.dueDate).format("MM-DD-YYYY"),
+    });
 
   const userList = [
     {
@@ -149,14 +151,26 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
               name="dueDate"
               rules={{
                 required: "Due Date must be required",
+                validate: (value) =>
+                  !dayjs(value).isValid() ? "Date must be valid" : true,
               }}
-              render={({ field: { ...rest }, fieldState: { error } }) => (
-                <DatePicker
-                  minDate={dayjs(new Date())}
-                  error={error?.message}
-                  {...rest}
-                />
-              )}
+              render={({
+                field: { value, onChange, ...rest },
+                fieldState: { error },
+              }) => {
+                const newValue = value ? dayjs(value) : null;
+                const changeHandler = (val: Dayjs | null) => {
+                  onChange(dayjs(val).format("MM-DD-YYYY"));
+                };
+                return (
+                  <DatePicker
+                    value={newValue}
+                    onChange={changeHandler}
+                    errorMessage={error?.message}
+                    {...rest}
+                  />
+                );
+              }}
             />
           </form>
         </div>

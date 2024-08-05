@@ -306,7 +306,7 @@ export const mockBooks = [
   {
     name: "The Brothers Karamazov",
     author: "Fyodor Dostoevsky",
-    currentAvailDabilityStatus: "Not Available",
+    currentAvailabilityStatus: "Not Available",
   },
   {
     name: "Wuthering Heights",
