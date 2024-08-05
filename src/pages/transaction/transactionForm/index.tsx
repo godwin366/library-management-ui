@@ -17,11 +17,14 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
     defaultValues: !!transaction
       ? {
           ...transaction,
-          userName: transaction?.username,
+          user: transaction?.userDetails?.name,
+          book: transaction?.bookDetails?.name,
+          type: transaction?.transactionType,
           phoneNumber: transaction?.contactNumber,
         }
       : {},
   });
+  console.log("transaction", transaction)
   const onSubmit = (data: any) =>
     console.log("submit", {
       ...data,
@@ -32,6 +35,10 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
     {
       label: "Karthik",
       value: "Karthik",
+    },
+    {
+      label: "Alice Johnson",
+      value: "Alice Johnson",
     },
     {
       label: "Balaji",
@@ -46,6 +53,10 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
     {
       label: "The Divine Comedy",
       value: "The Divine Comedy",
+    },
+    {
+      label: "To Kill a Mockingbird",
+      value: "To Kill a Mockingbird",
     },
     {
       label: "The Alchemist",

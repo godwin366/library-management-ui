@@ -29,8 +29,6 @@ const BookForm: React.FC<IProps> = ({ book, handleClose }) => {
     handleClose();
   };
 
-  console.log(methods.getValues());
-
   const availabilityOptions = [
     {
       label: "Available",

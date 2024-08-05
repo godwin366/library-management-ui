@@ -29,7 +29,6 @@ const Dropdown = forwardRef<HTMLDivElement, IProps>(({
   onChange,
   ...rest
 }, ref) => {
-  console.log(rest.value, placeHolder)
   return (
     <div ref={ref} className="common-select-container">
       <Select
