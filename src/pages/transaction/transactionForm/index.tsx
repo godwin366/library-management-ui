@@ -16,19 +16,17 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
   const methods = useForm({
     defaultValues: !!transaction
       ? {
-          ...transaction,
           user: transaction?.userDetails?.name,
           book: transaction?.bookDetails?.name,
           type: transaction?.transactionType,
-          phoneNumber: transaction?.contactNumber,
+          dueDate: transaction?.dueDate
         }
       : {},
   });
-  console.log("transaction", transaction)
+
   const onSubmit = (data: any) =>
     console.log("submit", {
       ...data,
-      dueDate: dayjs(data.dueDate).format("MM-DD-YYYY"),
     });
 
   const userList = [
@@ -162,8 +160,22 @@ const TransactionForm: React.FC<IProps> = ({ transaction, handleClose }) => {
               name="dueDate"
               rules={{
                 required: "Due Date must be required",
-                validate: (value) =>
-                  !dayjs(value).isValid() ? "Date must be valid" : true,
+                validate: (value) => {
+                  if (value) {
+                    const selectedDate = dayjs(value);
+
+                    if (!selectedDate.isValid()) {
+                      return "Invalid date";
+                    }
+
+                    if (selectedDate.isBefore(dayjs(), "day")) {
+                      return "Date must be in the future";
+                    }
+
+                    return true;
+                  }
+                  return "Invalid date";
+                },
               }}
               render={({
                 field: { value, onChange, ...rest },
