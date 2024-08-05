@@ -1,22 +1,20 @@
 import { useState } from "react";
-import { mockData, mockTransactions } from "../../utils/mock";
+import { mockTransactions } from "../../utils/mock";
 import "./style.scss";
 import Pagination from "../../components/pagination";
 import ActionMenu from "../../components/menu";
 import Popup from "../../components/modal";
-import EditAgent from "../../components/editAgent";
 import { IHeadcells, ITransaction } from "../../utils/interface";
 import AppTable from "../../components/appTable";
 import TableSearch from "../../components/tableSearch";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import BookForm from "../books/bookForm";
 import TransactionForm from "./transactionForm";
 
 const Transactions = () => {
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(50);
-  const [totalCount, setTotalCount] = useState(230);
+  const [totalCount] = useState(230);
   const [popup, setPopup] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 

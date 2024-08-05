@@ -1,23 +1,20 @@
 import { useState } from "react";
 import { mockUser } from "../../utils/mock";
-import "./style.scss";
 import Pagination from "../../components/pagination";
 import ActionMenu from "../../components/menu";
 import Popup from "../../components/modal";
 import { IHeadcells, IUser } from "../../utils/interface";
 import AppTable from "../../components/appTable";
-import InputField from "../../components/InputField";
-import AppButton from "../../components/button";
-import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import UserForm from "./userForm";
 import TableSearch from "../../components/tableSearch";
+import "./style.scss";
 
 const User = () => {
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(20);
-  const [totalCount, setTotalCount] = useState(mockUser.length);
+  const [totalCount] = useState(mockUser.length);
   const [popup, setPopup] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 

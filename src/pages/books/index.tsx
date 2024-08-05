@@ -15,7 +15,7 @@ const Books = () => {
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(50);
-  const [totalCount, setTotalCount] = useState(230);
+  const [totalCount] = useState(230);
   const [popup, setPopup] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
 

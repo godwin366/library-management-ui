@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import TabLayout from "../pages/tabLayout";
 import { PATH } from "../utils/constant";
 import User from "../pages/users";
 import Transactions from "../pages/transaction";
