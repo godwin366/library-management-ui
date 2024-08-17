@@ -13,19 +13,20 @@ interface IHeader {
 }
 
 const Headers = [
-  { label: "User", path: "user", icon: <PersonOutlineIcon /> },
+  { label: "User", path: "users", icon: <PersonOutlineIcon /> },
   { label: "Books", path: "books", icon: <MenuBookIcon /> },
   { label: "Transactions", path: "transactions", icon: <ReceiptLongIcon /> },
 ];
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const [selected, setSelected] = useState("user");
+  const [selected, setSelected] = useState("users");
 
   const onSelect = (header: IHeader) => {
     setSelected(header.path);
     navigate(header.path);
   };
+
   return (
     <div className="sidebar-layout">
       <TopBar />

@@ -5,6 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useForm, FormProvider, Controller } from "react-hook-form";
 import InputField from "../../../components/InputField";
 import Dropdown from "../../../components/select";
+import { mockBooks } from "../../../utils/mock";
 
 interface IProps {
   book: any;
@@ -26,6 +27,18 @@ const BookForm: React.FC<IProps> = ({ book, handleClose }) => {
   });
   const onSubmit = (data: any) => {
     console.log("submit", data);
+    book
+      ? mockBooks.forEach((x) => {
+          if (x.name === book.name) {
+            x.name = data.name;
+            x.author = data.author;
+            x.currentAvailabilityStatus = data.availability;
+          }
+        })
+      : mockBooks.push({
+          ...data,
+          currentAvailabilityStatus: data.availability,
+        });
     handleClose();
   };
 
